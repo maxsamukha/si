@@ -42,7 +42,6 @@ struct Q
         const n = num >> 31;
         return This(den - (n & (den << 1)), num - (n & (num << 1)));
     }
-
     
     bool opEquals(This other) const
     {
