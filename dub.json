@@ -1,0 +1,11 @@
+{
+	"authors": [
+		"Max Samukha (maxsamukha@gmail.com)"
+	],
+	"copyright": "Copyright © 2025, Max Samukha",
+	"description": "SI Units",
+	"license": "MIT",
+	"name": "si",
+	"targetType": "library",
+	"targetPath": "target"
+}
