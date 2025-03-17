@@ -15,8 +15,6 @@ import
     std.math,
     std.numeric;
 
-alias aliases = AliasSeq;
-
 /**
     Basic rational type.
  */
@@ -63,10 +61,10 @@ struct Q
             den * other.den).reduce();
     }
 
-    This opBinary(string op)(This rhs) const
+    This opBinary(string op)(This other) const
     if (op == "*")
     {
-        return This(num * rhs.num, den * rhs.den).reduce();
+        return This(num * other.num, den * other.den).reduce();
     }
 
     This opBinary(string op: "/")(This other) const => this * other.inverse();
