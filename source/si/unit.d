@@ -223,6 +223,8 @@ struct Unit(Dims dims_)
         alias opBinaryRight = opBinary!op;
     }
 
+    This opUnary(string op: "-")() const => This(-value);
+
     This opBinaryRight(string op: "-")(double other) const => This(other - value);
 
     Inverse opBinaryRight(string op: "/")(double other) const => Inverse(other / value);
@@ -255,6 +257,7 @@ unittest
     alias Pressure = typeof(Force() / Area());
     alias Energy = typeof(Force() * L());
 
+    assert(-L(1) == L(-1));
     assert(L(1) + L(1) == L(2));
     assert(L(3) - L(1) == L(2));
     assert(2 + L(4) == L(6));
